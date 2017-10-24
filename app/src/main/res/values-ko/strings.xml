@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MPlayer</string>
+
+    <string name="tab_Album">앨범</string>
+    <string name="tab_Artist">가수</string>
+    <string name="tab_Genre">장르</string>
+    <string name="tab_title">제목</string>
+</resources>

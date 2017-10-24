@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hooooong.mplayer.view.player.PlayerActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+
+        app:contentInsetStart="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="52dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1.8"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/textArtist"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.2"
+                android:gravity="bottom|center"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="-1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/controller"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPager"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/playStyle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_replay" />
+
+        <ImageView
+            android:id="@+id/playSound"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_volume" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/playStyle" />
+
+        <TextView
+            android:id="@+id/textCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/seekBar"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/textDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/seekBar"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorWhite" />
+
+        <ImageView
+            android:id="@+id/imgPlay"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_play_arrow" />
+
+        <ImageView
+            android:id="@+id/imgFf"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignTop="@+id/imgRew"
+            android:layout_toRightOf="@+id/imgPlay"
+            android:background="@drawable/ic_fast_forward" />
+
+        <ImageView
+            android:id="@+id/imgRew"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignTop="@+id/imgPlay"
+            android:layout_marginTop="25dp"
+            android:layout_toLeftOf="@+id/imgPlay"
+            android:layout_toStartOf="@+id/imgPlay"
+            android:background="@drawable/ic_fast_rewind" />
+
+        <ImageView
+            android:id="@+id/imgPrev"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignTop="@+id/imgRew"
+            android:layout_toLeftOf="@+id/imgRew"
+            android:layout_toStartOf="@+id/imgRew"
+            android:background="@drawable/ic_skip_previous" />
+
+        <ImageView
+            android:id="@+id/imgNext"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignTop="@+id/imgFf"
+            android:layout_toEndOf="@+id/imgFf"
+            android:layout_toRightOf="@+id/imgFf"
+            android:background="@drawable/ic_skip_next" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
